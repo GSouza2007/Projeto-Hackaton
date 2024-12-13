@@ -1,5 +1,5 @@
 <main>
-      <header>
+    <header>
       <!-- Redirecionar para o início ao clicar no ícone -->
       <a href="/" class="logo">
         <img src="../assets/logo/logo_portal_m.png" alt="Logo">
@@ -9,29 +9,32 @@
     <nav class="navbar">
       <button class="hamburger"></button>
       <ul class="navbar-list list-unstyled d-flex justify-content-center justify-content-lg-start">
-        <li><a href="comentariosAdicionar">Início</a></li>
+        <li><a href="comentariosAdicionar">Comentar</a></li>
         <li><a href="noticiasAdicionar">Notícias</a></li>
         <li><a href="eventosAdicionar">Publicar</a></li>
       </ul>
     </nav>
     </header>
-    
-    <div class="container2">
+
+    <div class="container">
         <div class="row">
-            <div class="col-6 offset-3">
-                <form action="/comentarios" method="post" enctype="multipart/form-data">
-                    <input type="text" name="autor" class="form-control" placeholder="Seu nome">
-
-                    <input type="text" class="form-control" name="comentario" placeholder="Insira o seu comentario">
-
-                    <input type="submit" class="btn btn-primary" value="Comentar">
-
-                </form>
+           {{#each eventos}}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <img src="../imagens/{{imagem}}">
+                    <div class="textos">
+                        <p>{{nome}}</p>
+                        <p>R${{valor}}</p>
+                    </div>
+                    <a href="/eventosEditar/{{id}}" class="btn btn-warning">Alterar</a>
+                    <a href="/remover/{{id}}&{{imagem}}" class="btn btn-danger">Remover</a>
+                </div>
             </div>
+           {{/each}}
         </div>
     </div>
 
-     <footer class="footer pt-5 pb-3">
+    <footer class="footer pt-5 pb-3">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-4 mb-4">
@@ -49,7 +52,7 @@
               <li><a href="#jogospopulares">🔔 Notícias Recentes</a></li>
               <li><a href="#promocoes">📝 Publicar Notícias</a></li>
               <li><a href="#jogosdestaques">📌 Recomendado</a></li>
-              <li><a href="sobre.html">💬 Feed Back</a></li>
+              <li><a href="feedback">💬 Feed Back</a></li>
             </ul>
           </div>
 
@@ -64,6 +67,4 @@
           </div>
         </div>
     </footer>
-
-    <script src="../js/index.js" defer></script>
 </main>

@@ -1,7 +1,7 @@
 <main>
       <header>
       <!-- Redirecionar para o início ao clicar no ícone -->
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <img src="../assets/logo/logo_portal_m.png" alt="Logo">
       </a>
       
@@ -9,9 +9,9 @@
     <nav class="navbar">
       <button class="hamburger"></button>
       <ul class="navbar-list list-unstyled d-flex justify-content-center justify-content-lg-start">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="publicar.html">Publicar</a></li>
+        <li><a href="comentariosAdicionar">Comentar</a></li>
+        <li><a href="noticiasAdicionar">Notícias</a></li>
+        <li><a href="eventosAdicionar">Publicar</a></li>
       </ul>
     </nav>
     </header>
@@ -74,8 +74,8 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
                     <div class="textos">
-                        <p>{{nome}}</p>
-                        <p>{{comentario}}</p>
+                        <p style="font-size: 20px;">'<strong>{{comentario}}</strong>'</p>
+                        <p>-{{nome}}</p>
                     </div>
                     <a href="/removerComentarios/{{id}}" class="btn btn-danger">Remover</a>
                 </div>
@@ -105,7 +105,7 @@
               <li><a href="#jogospopulares">🔔 Notícias Recentes</a></li>
               <li><a href="#promocoes">📝 Publicar Notícias</a></li>
               <li><a href="#jogosdestaques">📌 Recomendado</a></li>
-              <li><a href="sobre.html">💬 Feed Back</a></li>
+              <li><a href="feedback">💬 Feed Back</a></li>
             </ul>
           </div>
 
@@ -121,5 +121,4 @@
         </div>
     </footer>
 
-    <script src="../js/index.js" defer></script>
 </main>

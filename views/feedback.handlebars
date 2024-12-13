@@ -1,8 +1,11 @@
 <main>
-      <header>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <header>
       <!-- Redirecionar para o início ao clicar no ícone -->
       <a href="/" class="logo">
-        <img src="../assets/logo/logo_portal_m.png" alt="Logo">
+        <img src="/assets/logo/logo_portal_m.png" alt="Logo">
       </a>
       
       <!-- Navbar -->
@@ -15,23 +18,24 @@
       </ul>
     </nav>
     </header>
-    
-    <div class="container2">
-        <div class="row">
-            <div class="col-6 offset-3">
-                <form action="/comentarios" method="post" enctype="multipart/form-data">
-                    <input type="text" name="autor" class="form-control" placeholder="Seu nome">
-
-                    <input type="text" class="form-control" name="comentario" placeholder="Insira o seu comentario">
-
-                    <input type="submit" class="btn btn-primary" value="Comentar">
-
+            <section class="rating-section">
+                <h2>SUA OPINIÃO É IMPORTANTE!</h2>
+                <div class="rating-stars">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <form class="feedback-form">
+                    <textarea placeholder="Compartilhe sua experiência conosco..."></textarea>
+                    <button type="submit" class="submit-feedback">Enviar Feedback</button>
                 </form>
-            </div>
-        </div>
-    </div>
+            </section>
+    <br><br>
 
-     <footer class="footer pt-5 pb-3">
+<!-- Footer -->
+    <footer class="footer pt-5 pb-3">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-4 mb-4">
@@ -49,7 +53,6 @@
               <li><a href="#jogospopulares">🔔 Notícias Recentes</a></li>
               <li><a href="#promocoes">📝 Publicar Notícias</a></li>
               <li><a href="#jogosdestaques">📌 Recomendado</a></li>
-              <li><a href="sobre.html">💬 Feed Back</a></li>
             </ul>
           </div>
 
@@ -64,6 +67,4 @@
           </div>
         </div>
     </footer>
-
-    <script src="../js/index.js" defer></script>
 </main>

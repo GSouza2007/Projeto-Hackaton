@@ -166,6 +166,11 @@ hr {
     margin-top: 10px;
 }
 
-.eventos{
-    margin-top: 100px;
+.container2 {
+    margin-top: 200px;
+    align-items: center;
+}
+
+.btn-primary{
+    align-items: center;
 }

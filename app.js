@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileupload());
 
 app.use('/imagens', express.static('./imagens'));
+app.use('/assets/logo', express.static('./assets/logo'));
 // Adicionar Bootstrap
 app.use('/bootstrap', express.static('./node_modules/bootstrap/dist'));
 
@@ -63,43 +64,51 @@ conexao.connect(function(error){
 });
 
 // Rota principal
-app.get('/', function(req, res) {
-    // SQL
+// Página de eventos
+app.get('/eventos', function(req, res) {
     let sql = 'SELECT * FROM eventos';
-    let sql2 = 'SELECT * FROM noticias';
-    let sql3 = 'SELECT * FROM comentarios'; // Nova consulta para comentários
 
-    // Executar o primeiro comando SQL
-    conexao.query(sql, function(erro1, eventos) {
-        if (erro1) {
-            console.error('Erro ao buscar eventos:', erro1);
+    conexao.query(sql, function(erro, eventos) {
+        if (erro) {
+            console.error('Erro ao buscar eventos:', erro);
             return res.status(500).send('Erro no servidor ao buscar eventos.');
         }
 
-        // Executar o segundo comando SQL
-        conexao.query(sql2, function(erro2, noticias) {
-            if (erro2) {
-                console.error('Erro ao buscar notícias:', erro2);
-                return res.status(500).send('Erro no servidor ao buscar notícias.');
-            }
-
-            // Executar o terceiro comando SQL
-            conexao.query(sql3, function(erro3, comentarios) {
-                if (erro3) {
-                    console.error('Erro ao buscar comentários:', erro3);
-                    return res.status(500).send('Erro no servidor ao buscar comentários.');
-                }
-
-                // Renderizar a página com todos os dados
-                res.render('home', { 
-                    eventos: eventos, 
-                    noticias: noticias, 
-                    comentarios: comentarios 
-                });
-            });
-        });
+        // Renderizar a página de eventos
+        res.render('eventos', { eventos: eventos });
     });
 });
+
+// Página de notícias
+app.get('/', function(req, res) {
+    let sql = 'SELECT * FROM noticias';
+
+    conexao.query(sql, function(erro, noticias) {
+        if (erro) {
+            console.error('Erro ao buscar notícias:', erro);
+            return res.status(500).send('Erro no servidor ao buscar notícias.');
+        }
+
+        // Renderizar a página de notícias
+        res.render('home', { noticias: noticias });
+    });
+});
+
+// Página de comentários
+app.get('/comentarios', function(req, res) {
+    let sql = 'SELECT * FROM comentarios';
+
+    conexao.query(sql, function(erro, comentarios) {
+        if (erro) {
+            console.error('Erro ao buscar comentários:', erro);
+            return res.status(500).send('Erro no servidor ao buscar comentários.');
+        }
+
+        // Renderizar a página de comentários
+        res.render('comentarios', { comentarios: comentarios });
+    });
+});
+
 
 
 // Rota de cadastro
@@ -334,6 +343,14 @@ app.get('/eventosAdicionar/', function(req, res){
 
 app.get('/comentariosAdicionar/', function(req, res){
     res.render('comentariosAdicionar');
+});
+
+app.get('/feedback', function (req, res) {
+    res.render('feedback');
+});
+
+app.get('/eventos', function(req, res){
+    res.render('eventos');
 });
 
 //Servidor
