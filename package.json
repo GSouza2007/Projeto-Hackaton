@@ -1,0 +1,26 @@
+{
+  "name": "projeto-hackaton",
+  "version": "1.0.0",
+  "description": "Projeto para Hackaton",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "express-handlebars",
+    "bootstrap",
+    "mysql"
+  ],
+  "author": "Gabriel, Isaac, Guilherme, Jeferson",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "express-handlebars": "^8.0.1",
+    "mysql2": "^3.11.5",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7"
+  }
+}
