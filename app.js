@@ -47,11 +47,11 @@ app.use(express.urlencoded({extended:false}));
 
 //Configuração de conexão
 const conexao = mysql.createConnection({
-    host:'localhost',
-    port:'3307',
-    user:'root',
-    password:'#284IV1160G@2062S7XD050I%',
-    database:'projeto'
+    host:'x',  // Apenas colocar essas informações quando o código estiver completo
+    port:'x',
+    user:'x',
+    password:'x',
+    database:'x'
 });
 
 //Teste de conexão
