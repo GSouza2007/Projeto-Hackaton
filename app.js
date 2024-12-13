@@ -115,12 +115,13 @@ app.get('/comentarios', function(req, res) {
 app.post('/cadastrar', function(req, res){
     //Obter os dados que serão utilizados no cadastro
     let nome = req.body.nome;
-    let valor = req.body.valor;
+    let descricao = req.body.descricao;
     let imagem = req.files.imagem.name;
+    let data = req.body.data;
 
 
     //SQL
-    let sql = `INSERT INTO eventos (nome, valor, imagem) VALUES ('${nome}', ${valor}, '${imagem}')`;
+    let sql = `INSERT INTO eventos (nome, descricao, imagem, datadia) VALUES ('${nome}', '${descricao}', '${imagem}', '${data}')`;
 
     //Executar comando SQL
     conexao.query(sql, function(erro, retorno){
@@ -165,11 +166,9 @@ app.post('/noticias', function(req, res){
 // Rota para adicionar comentarios
 app.post('/comentarios', function(req, res){
     let comentario = req.body.comentario;
-    let autor = req.body.autor;
-
 
     //SQL
-    let sql = `INSERT INTO comentarios (comentario, nome) VALUES ('${comentario}', '${autor}')`;
+    let sql = `INSERT INTO comentarios (comentario) VALUES ('${comentario}')`;
 
     //Executar comando SQL
     conexao.query(sql, function(erro, retorno){
@@ -181,7 +180,7 @@ app.post('/comentarios', function(req, res){
         }
     });
 
-    res.redirect('/');
+    res.redirect('comentarios');
 });
 
 
@@ -199,7 +198,7 @@ app.get('/remover/:id&:imagem', function(req, res){
             });
         }
     });
-    res.redirect('/');
+    res.redirect('/eventos');
 });
 
 // Remover noticias
@@ -230,7 +229,7 @@ app.get('/removerComentarios/:id', function(req, res){
             console.log(retorno);
         }
     });
-    res.redirect('/');
+    res.redirect('/comentarios');
 });
 
 // Rota para editar eventos
@@ -351,6 +350,11 @@ app.get('/feedback', function (req, res) {
 
 app.get('/eventos', function(req, res){
     res.render('eventos');
+});
+
+
+app.get('/', function(req, res){
+    res.render('/');
 });
 
 //Servidor

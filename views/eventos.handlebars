@@ -9,14 +9,14 @@
     <nav class="navbar">
       <button class="hamburger"></button>
       <ul class="navbar-list list-unstyled d-flex justify-content-center justify-content-lg-start">
-        <li><a href="comentariosAdicionar">Comentar</a></li>
-        <li><a href="noticiasAdicionar">Notícias</a></li>
-        <li><a href="eventosAdicionar">Publicar</a></li>
+        <li><a href="comentarios">Comentários</a></li>
+        <li><a href="/">Notícias</a></li>
+        <li><a href="eventosAdicionar">Publicar Eventos</a></li>
       </ul>
     </nav>
     </header>
 
-    <div class="container">
+    <div class="container2">
         <div class="row">
            {{#each eventos}}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -24,7 +24,8 @@
                     <img src="../imagens/{{imagem}}">
                     <div class="textos">
                         <p>{{nome}}</p>
-                        <p>R${{valor}}</p>
+                        <p>{{descricao}}</p>
+                        <p>{{data}}</p> 
                     </div>
                     <a href="/eventosEditar/{{id}}" class="btn btn-warning">Alterar</a>
                     <a href="/remover/{{id}}&{{imagem}}" class="btn btn-danger">Remover</a>
@@ -49,10 +50,9 @@
           <div class="footer-section col-12 col-md-4 mb-4">
             <h3>Links Rápidos</h3>
             <ul class="footer-links">
-              <li><a href="#jogospopulares">🔔 Notícias Recentes</a></li>
-              <li><a href="#promocoes">📝 Publicar Notícias</a></li>
-              <li><a href="#jogosdestaques">📌 Recomendado</a></li>
-              <li><a href="feedback">💬 Feed Back</a></li>
+              <li><a href="/">🔔 Notícias Recentes</a></li>
+              <li><a href="noticiasAdicionar">📝 Publicar Notícias</a></li>
+              <li><a href="comentariosAdicionar">💬 Comentar</a></li>
             </ul>
           </div>
 
@@ -63,7 +63,7 @@
 
         <div class="footer-bottom row mt-4">
           <div class="col-12 text-center">
-            <p class="mb-0">Criado por ... </p>
+            <p class="mb-0">Criado por Gabriel Batista, Guilherme de Souza, Isaac Alonço e Jefferson Serrão</p>
           </div>
         </div>
     </footer>

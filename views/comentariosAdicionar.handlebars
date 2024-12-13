@@ -9,27 +9,28 @@
     <nav class="navbar">
       <button class="hamburger"></button>
       <ul class="navbar-list list-unstyled d-flex justify-content-center justify-content-lg-start">
-        <li><a href="comentariosAdicionar">Início</a></li>
-        <li><a href="noticiasAdicionar">Notícias</a></li>
-        <li><a href="eventosAdicionar">Publicar</a></li>
+        <li><a href="comentarios">Comentários</a></li>
+        <li><a href="/">Notícias</a></li>
+        <li><a href="eventos">Eventos</a></li>
       </ul>
     </nav>
     </header>
-    
-    <div class="container2">
-        <div class="row">
-            <div class="col-6 offset-3">
-                <form action="/comentarios" method="post" enctype="multipart/form-data">
-                    <input type="text" name="autor" class="form-control" placeholder="Seu nome">
+            <section class="rating-section">
+                <h2>SUA OPINIÃO É IMPORTANTE!</h2>
+                <div class="rating-stars">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
 
-                    <input type="text" class="form-control" name="comentario" placeholder="Insira o seu comentario">
-
-                    <input type="submit" class="btn btn-primary" value="Comentar">
-
+                <form method="POST" action="/comentarios" class="feedback-form">
+                    <textarea type="text" placeholder="Compartilhe sua experiência conosco..." name="comentario"></textarea>
+                    <button type="submit" class="submit-feedback">Enviar Feedback</button>
                 </form>
-            </div>
-        </div>
-    </div>
+            </section>
+        </form>
 
      <footer class="footer pt-5 pb-3">
       <div class="container">
@@ -46,10 +47,9 @@
           <div class="footer-section col-12 col-md-4 mb-4">
             <h3>Links Rápidos</h3>
             <ul class="footer-links">
-              <li><a href="#jogospopulares">🔔 Notícias Recentes</a></li>
-              <li><a href="#promocoes">📝 Publicar Notícias</a></li>
-              <li><a href="#jogosdestaques">📌 Recomendado</a></li>
-              <li><a href="sobre.html">💬 Feed Back</a></li>
+              <li><a href="/">🔔 Notícias Recentes</a></li>
+              <li><a href="noticiasAdicionar">📝 Publicar Notícias</a></li>
+              <li><a href="comentariosAdicionar">💬 Comentar</a></li>
             </ul>
           </div>
 
@@ -60,7 +60,7 @@
 
         <div class="footer-bottom row mt-4">
           <div class="col-12 text-center">
-            <p class="mb-0">Criado por ... </p>
+            <p class="mb-0">Criado por Gabriel Batista, Guilherme de Souza, Isaac Alonço e Jefferson Serrão</p>
           </div>
         </div>
     </footer>
