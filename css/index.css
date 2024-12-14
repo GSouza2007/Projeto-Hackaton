@@ -226,3 +226,20 @@ header {
 ::-webkit-scrollbar-thumb{
     background-color: #18284a;
 }
+
+.navbar-list {
+  display: none; /* Esconde o menu inicialmente */
+}
+
+.navbar-list.show {
+  display: flex; /* Exibe o menu quando a classe 'show' é adicionada */
+  flex-direction: column; /* Alinha os itens verticalmente */
+}
+
+/* Estilo para diferentes tamanhos de tela */
+@media (min-width: 992px) {
+  .navbar-list {
+    display: flex; /* Mostra o menu para telas grandes */
+    flex-direction: row; /* Alinha os itens horizontalmente */
+  }
+}

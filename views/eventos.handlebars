@@ -1,70 +1,73 @@
 <main>
     <header>
-      <!-- Redirecionar para o início ao clicar no ícone -->
-      <a href="/" class="logo">
-        <img src="../assets/logo/logo_portal_m.png" alt="Logo">
-      </a>
-      
-      <!-- Navbar -->
-    <nav class="navbar">
-      <button class="hamburger"></button>
-      <ul class="navbar-list list-unstyled d-flex justify-content-center justify-content-lg-start">
-        <li><a href="comentarios">Comentários</a></li>
-        <li><a href="/">Notícias</a></li>
-        <li><a href="eventosAdicionar">Publicar Eventos</a></li>
-      </ul>
-    </nav>
+        <!-- Redirecionar para o início ao clicar no ícone -->
+        <a href="/" class="logo">
+            <img src="../assets/logo/logo_portal_m.png" alt="Logo">
+        </a>
+        
+        <!-- Navbar -->
+        <nav class="navbar">
+            <button class="hamburger"></button>
+            <ul class="navbar-list list-unstyled d-flex justify-content-center justify-content-lg-start">
+                <li><a href="comentarios">Comentários</a></li>
+                <li><a href="/">Notícias</a></li>
+                <li><a href="eventosAdicionar">Publicar Eventos</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container2">
         <div class="row">
-           {{#each eventos}}
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card">
-                    <img src="../imagens/{{imagem}}">
-                    <div class="textos">
-                        <p>{{nome}}</p>
-                        <p>{{descricao}}</p>
-                        <p>{{data}}</p> 
+            {{#each eventos}}
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="card">
+                        <img src="../imagens/{{imagem}}">
+                        <div class="textos">
+                            <p>{{nome}}</p>
+                            <p>{{descricao}}</p>
+                            <p>{{datodia}}</p> 
+                        </div>
+                        <a href="/eventosEditar/{{id}}" class="btn btn-warning">Alterar</a>
+                        <a href="/remover/{{id}}&{{imagem}}" class="btn btn-danger">Remover</a>
                     </div>
-                    <a href="/eventosEditar/{{id}}" class="btn btn-warning">Alterar</a>
-                    <a href="/remover/{{id}}&{{imagem}}" class="btn btn-danger">Remover</a>
                 </div>
-            </div>
-           {{/each}}
+            {{/each}}
         </div>
     </div>
 
     <footer class="footer pt-5 pb-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-4 mb-4">
-            <svg class="portal-logo" width="150" height="50" viewBox="0 0 150 50">
-              <text x="0" y="35" fill="white" font-size="16" font-weight="bold">PORTAL M NORTE</text>
-            </svg>
-            <p>Notícias atualizadas da comunidade.</p>
-            <div class="social-links">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <svg class="portal-logo" width="150" height="50" viewBox="0 0 150 50">
+                        <text x="0" y="35" fill="white" font-size="16" font-weight="bold">PORTAL M NORTE</text>
+                    </svg>
+                    <p>Notícias atualizadas da comunidade.</p>
+                    <div class="social-links"></div>
+                </div>
+
+                <div class="footer-section col-12 col-md-4 mb-4">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">🔔 Notícias Recentes</a></li>
+                        <li><a href="noticiasAdicionar">📝 Publicar Notícias</a></li>
+                        <li><a href="comentarios">🗨️Comentários</a></li>
+                        <li><a href="comentariosAdicionar">💬 Comentar</a></li>
+                        <li><a href="eventos">🎉Eventos</a></li>
+                        <li><a href="eventosAdicionar">🥳Adicionar Evento</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section col-12 col-md-4 mb-4">
+                    <h3>Fique por dentro de todas as notícias!</h3>
+                </div>
+
+                <div class="footer-bottom row mt-4">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">Criado por Gabriel Batista, Guilherme de Souza, Isaac Alonço e Jefferson Serrão</p>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="footer-section col-12 col-md-4 mb-4">
-            <h3>Links Rápidos</h3>
-            <ul class="footer-links">
-              <li><a href="/">🔔 Notícias Recentes</a></li>
-              <li><a href="noticiasAdicionar">📝 Publicar Notícias</a></li>
-              <li><a href="comentariosAdicionar">💬 Comentar</a></li>
-            </ul>
-          </div>
-
-        <div class="footer-section col-12 col-md-4 mb-4">
-          <h3>Fique por dentro de todas as notícias!</h3>
-        </div>
-      
-
-        <div class="footer-bottom row mt-4">
-          <div class="col-12 text-center">
-            <p class="mb-0">Criado por Gabriel Batista, Guilherme de Souza, Isaac Alonço e Jefferson Serrão</p>
-          </div>
         </div>
     </footer>
 </main>

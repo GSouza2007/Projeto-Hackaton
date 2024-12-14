@@ -47,11 +47,11 @@ app.use(express.urlencoded({extended:false}));
 
 //Configuração de conexão
 const conexao = mysql.createConnection({
-    host:'x',  // Apenas colocar essas informações quando o código estiver completo
-    port:'x',
-    user:'x',
-    password:'x',
-    database:'x'
+    host:'localhost',
+    port:'3307',
+    user:'root',
+    password:'#284IV1160G@2062S7XD050I%',
+    database:'projeto'
 });
 
 //Teste de conexão
@@ -134,7 +134,7 @@ app.post('/cadastrar', function(req, res){
         }
     });
 
-    res.redirect('/');
+    res.redirect('eventos');
 });
 
 // Rota para adicionar noticias
@@ -249,13 +249,14 @@ app.get('/eventosEditar/:id', function(req, res){
 // Editar os eventos
 app.post('/editar', function(req, res){
     let nome = req.body.nome;
-    let valor = req.body.valor;
+    let descricao = req.body.descricao;
     let id = req.body.id;
+    let data = req.body.data;
     let nomeImagem = req.body.nomeImagem;
     
     try{
         let imagem = req.files.imagem;
-        let sql = `UPDATE eventos SET nome='${nome}', valor=${valor}, imagem='${imagem.name}' WHERE id=${id}`;
+        let sql = `UPDATE eventos SET nome='${nome}', descricao='${descricao}', imagem='${imagem.name}', datadia='${data}' WHERE id=${id}`;
 
         conexao.query(sql, function(erro, retorno){
             if(erro){
@@ -268,7 +269,7 @@ app.post('/editar', function(req, res){
             imagem.mv(__dirname+'/imagens/'+imagem.name);
         });
     }catch(erro){
-        let sql = `UPDATE eventos SET nome='${nome}', valor=${valor} WHERE id=${id}`;
+        let sql = `UPDATE eventos SET nome='${nome}', descricao='${descricao}', datadia='${data}'  WHERE id=${id}`;
 
         conexao.query(sql, function(erro, retorno){
             if(erro){
@@ -277,7 +278,7 @@ app.post('/editar', function(req, res){
         });
     }
 
-    res.redirect('/');  
+    res.redirect('eventos');  
      
 });
 
